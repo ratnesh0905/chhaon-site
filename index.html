@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chhaon छाँव — Premium indoor plants, Delhi. Launching Spring 2027.</title>
+<meta name="description" content="Chhaon (छाँव) — thoughtfully potted indoor plants for desks and homes. Launching in Delhi, Spring 2027. Join the list." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mulish:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --canopy:#152A1F;        /* deep evening green — under the tree */
+    --canopy-deep:#0E1F16;
+    --dapple:#F3EDDD;        /* light through leaves */
+    --amaltas:#E5B44C;       /* Delhi's golden laburnum */
+    --sage:#9DB8A0;
+    --ink-soft:rgba(243,237,221,0.72);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--canopy);
+    color:var(--dapple);
+    font-family:'Mulish',sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+  }
+
+  /* ---- the shade: a slow pool of dappled light above the word ---- */
+  .grove{
+    position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(52vw 38vh at 50% 12%, rgba(229,180,76,0.16), transparent 65%),
+      radial-gradient(70vw 55vh at 50% 0%, rgba(157,184,160,0.10), transparent 70%),
+      linear-gradient(180deg, var(--canopy) 0%, var(--canopy-deep) 100%);
+  }
+  .leafshadow{
+    position:fixed;inset:-10%;pointer-events:none;z-index:0;opacity:.35;
+    background-image:radial-gradient(14px 22px at 20% 30%, rgba(0,0,0,0.25), transparent 60%),
+      radial-gradient(18px 26px at 70% 15%, rgba(0,0,0,0.22), transparent 60%),
+      radial-gradient(12px 20px at 45% 60%, rgba(0,0,0,0.18), transparent 60%),
+      radial-gradient(20px 30px at 85% 55%, rgba(0,0,0,0.2), transparent 60%),
+      radial-gradient(16px 24px at 10% 75%, rgba(0,0,0,0.2), transparent 60%);
+    animation:sway 16s ease-in-out infinite alternate;
+  }
+  @keyframes sway{from{transform:translateX(-1.2%) translateY(-0.6%);}to{transform:translateX(1.2%) translateY(0.8%);}}
+  @media (prefers-reduced-motion: reduce){
+    .leafshadow{animation:none;}
+    .word .bindu{animation:none;}
+  }
+
+  main{
+    position:relative;z-index:1;
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:9vh 24px 6vh;gap:0;
+  }
+
+  .eyebrow{
+    font-size:12px;letter-spacing:0.32em;text-transform:uppercase;
+    color:var(--amaltas);font-weight:600;margin-bottom:3.2vh;
+  }
+
+  /* ---- the word itself ---- */
+  .word{
+    font-family:'Rozha One',serif;
+    font-size:clamp(88px, 19vw, 220px);
+    line-height:1.05;
+    color:var(--dapple);
+    text-shadow:0 22px 60px rgba(0,0,0,0.45);
+    position:relative;
+  }
+  /* the chandrabindu already crowns the word like a canopy — give it the light */
+  .word .bindu{ color:var(--amaltas); }
+
+  .latin{
+    font-family:'Mulish',sans-serif;
+    font-weight:300;
+    letter-spacing:0.52em;
+    text-transform:uppercase;
+    font-size:clamp(14px, 2.4vw, 20px);
+    margin-top:1.6vh;
+    color:var(--sage);
+    text-indent:0.52em; /* balance the tracking */
+  }
+
+  .meaning{
+    margin-top:4.5vh;
+    font-size:clamp(16px, 2vw, 19px);
+    font-weight:300;
+    color:var(--ink-soft);
+    max-width:34em;
+    line-height:1.75;
+  }
+  .meaning em{font-style:italic;color:var(--dapple);}
+
+  .launch{
+    margin-top:1.6vh;
+    font-size:13px;letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--sage);font-weight:600;
+  }
+  .launch .dot{color:var(--amaltas);padding:0 .6em;}
+
+  /* ---- capture ---- */
+  form.capture{
+    margin-top:5vh;
+    display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+    width:100%;max-width:440px;
+  }
+  .capture input[type="email"]{
+    flex:1;min-width:220px;
+    background:rgba(243,237,221,0.06);
+    border:1px solid rgba(243,237,221,0.25);
+    border-radius:2px;
+    padding:14px 16px;
+    color:var(--dapple);
+    font-family:'Mulish',sans-serif;font-size:15px;
+    outline:none;
+    transition:border-color .2s ease;
+  }
+  .capture input[type="email"]::placeholder{color:rgba(243,237,221,0.4);}
+  .capture input[type="email"]:focus{border-color:var(--amaltas);}
+  .capture button{
+    background:var(--amaltas);
+    color:var(--canopy-deep);
+    border:none;border-radius:2px;
+    padding:14px 26px;
+    font-family:'Mulish',sans-serif;font-weight:700;font-size:14px;
+    letter-spacing:0.08em;text-transform:uppercase;
+    cursor:pointer;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .capture button:hover{background:#EFC468;transform:translateY(-1px);}
+  .capture button:focus-visible, .capture input:focus-visible, .links a:focus-visible{
+    outline:2px solid var(--amaltas);outline-offset:3px;
+  }
+  .capture .note{
+    width:100%;font-size:12.5px;color:rgba(243,237,221,0.45);
+    font-weight:300;letter-spacing:0.02em;margin-top:2px;
+  }
+  .thanks{
+    margin-top:5vh;font-size:16px;color:var(--amaltas);display:none;
+  }
+
+  /* ---- links ---- */
+  .links{
+    margin-top:4.5vh;display:flex;gap:28px;justify-content:center;flex-wrap:wrap;
+  }
+  .links a{
+    color:var(--dapple);text-decoration:none;
+    font-size:13.5px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;
+    padding-bottom:5px;
+    border-bottom:1px solid rgba(229,180,76,0.5);
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .links a:hover{color:var(--amaltas);border-color:var(--amaltas);}
+
+  footer{
+    position:relative;z-index:1;
+    text-align:center;padding:26px 24px 30px;
+    font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
+    color:rgba(243,237,221,0.38);font-weight:400;
+  }
+  footer .tm{font-size:10px;vertical-align:super;}
+</style>
+</head>
+<body>
+  <div class="grove" aria-hidden="true"></div>
+  <div class="leafshadow" aria-hidden="true"></div>
+
+  <main>
+    <p class="eyebrow">Thodi chhaon, aapke desk par</p>
+
+    <h1 class="word" lang="hi">छा<span class="bindu">ँ</span>व</h1>
+    <p class="latin">Chhaon</p>
+
+    <p class="meaning">
+      <em>Chhaon</em> — the shade a tree gives without being asked.
+      Thoughtfully potted indoor plants for desks and homes,
+      grown and packed with care in Delhi.
+    </p>
+
+    <p class="launch">Delhi <span class="dot">·</span> Launching Spring 2027</p>
+
+    <!-- ==============================================================
+         EMAIL CAPTURE — powered by Formspree (free tier)
+         1. Create a free account at formspree.io
+         2. Create a form, copy its ID (looks like: xabcdefg)
+         3. Replace YOUR_FORM_ID below with that ID
+         Until then the form shows a friendly fallback message.
+    =============================================================== -->
+    <form class="capture" id="captureForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="email" name="email" required placeholder="you@email.com" aria-label="Email address" />
+      <button type="submit">Notify me</button>
+      <p class="note">Be first in line when we open. No spam, ever.</p>
+    </form>
+    <p class="thanks" id="thanksMsg">You're on the list. See you in spring. 🌿</p>
+
+    <nav class="links" aria-label="Social links">
+      <!-- Update handle/number below before deploying -->
+      <a href="https://instagram.com/chhaon.plants" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Chhaon!%20Tell%20me%20more%20%F0%9F%8C%BF" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </main>
+
+  <footer>
+    Chhaon<span class="tm">™</span> · New Delhi, India
+  </footer>
+
+<script>
+  // Graceful submit: works with Formspree once YOUR_FORM_ID is set;
+  // shows an inline thank-you either way, without leaving the page.
+  const form = document.getElementById('captureForm');
+  const thanks = document.getElementById('thanksMsg');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const action = form.getAttribute('action');
+    if (action.includes('YOUR_FORM_ID')) {
+      // Formspree not connected yet — still acknowledge the visitor kindly.
+      form.style.display = 'none';
+      thanks.textContent = "We're setting up our list — for now, say hi on Instagram or WhatsApp below 🌿";
+      thanks.style.display = 'block';
+      return;
+    }
+    try {
+      const res = await fetch(action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        thanks.style.display = 'block';
+      } else {
+        thanks.textContent = 'Something went wrong — try again in a moment.';
+        thanks.style.display = 'block';
+      }
+    } catch {
+      thanks.textContent = 'Network hiccup — try again in a moment.';
+      thanks.style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>
